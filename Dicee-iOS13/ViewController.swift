@@ -9,12 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    // Outlets to reference the UI elements in this class.
+    @IBOutlet weak var diceImageLeft: UIImageView!
+    @IBOutlet weak var diceImageRight: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Changing image for the Left dice
+        diceImageLeft.image = #imageLiteral(resourceName: "DiceSix");
+        //diceImageLeft.alpha = 0.75;
+        
+        //Change Right dice
+        // Who.What = Value
+        diceImageRight.image = #imageLiteral(resourceName: "DiceTwo");
     }
 
-
+    @IBAction func rollDiceButton(_ sender: UIButton) {
+        print("Inside rollDiceButton!");
+        
+        //change the images after press
+        diceImageLeft.image = #imageLiteral(resourceName: "DiceThree");
+        diceImageRight.image = #imageLiteral(resourceName: "DiceSix");
+    }
+    
 }
 
